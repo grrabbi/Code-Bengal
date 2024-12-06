@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="shortcut icon" href="./image/Round Logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0F172A !important;
+            min-height: 100vh;
+            color: #fff !important;
+        }
+        /* Nevbar  Start */
+        
+        .navbar-toggler {
+            background-color: #e7e7e7 !important;
+        }
+        
+        .top-Navbar {
+            background-color: #0F172A;
+            width: 100%;
+            height: 71px;
+            box-shadow: 1px 7px 4px 0px #18326f3b;
+            position: fixed;
+            z-index: 2;
+        }
+        
+        .navbar {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-weight: 500;
+        }
+        
+        .navbar-brand img {
+            width: 250px;
+            height: 66px;
+        }
+        
+        .navbar-brand {
+            padding: 0px;
+        }
+        
+        .nav-item .nav-link {
+            color: #ffffff;
+            margin-right: 13px;
+            display: inline-block;
+        }
+        
+        .nav-item .nav-link.active {
+            color: #aca2ff !important;
+        }
+        
+        .nav-item .nav-link:hover {
+            color: #a3a3a3;
+        }
+        
+        .navbar-nav {
+            margin-left: auto;
+        }
+        /* Sign Up Button */
+        
+        .nav-item .btn-signup {
+            background-color: #2563eb;
+            color: #ffffff !important;
+            padding: 7px 15px;
+            border-radius: 19px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .nav-item .btn-signup:hover {
+            background-color: #1d4ed8;
+            color: #ffffff;
+        }
+        /* Nevbar End */
+        
+        .myslider-section {
+            width: 100%;
+            padding: 200px 20px;
+        }
+        
+        .myslider-container {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .myslider-container h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .myslider {
+            overflow-x: auto;
+            display: flex;
+            gap: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #1E293B transparent;
+            scroll-snap-type: x mandatory;
+            border-radius: 10px;
+            width: 100%;
+            padding-bottom: 10px;
+            cursor: grab;
+            user-select: none;
+            scroll-behavior: smooth;
+        }
+        
+        .myslider:active {
+            cursor: grabbing;
+        }
+        
+        .myslider-track {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .slide {
+            flex: 0 0 calc(25% - 10px);
+            text-align: center;
+            background-color: #1E293B;
+            padding: 10px;
+            border-radius: 10px;
+            scroll-snap-align: center;
+        }
+        
+        .slide img {
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+            /* Adjust the speed of the transition */
+            aspect-ratio: 16/14;
+            filter: grayscale(100%);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .slide img:hover {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+        
+        .slide p {
+            font-size: 20px;
+            font-weight: 400;
+            font-weight: bold;
+        }
+        
+        .myslider::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .myslider::-webkit-scrollbar-thumb {
+            background-color: #1E293B;
+            border-radius: 5px;
+        }
+        
+        .myslider::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .slide a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+        
+        .slide a i {
+            margin: 0 1px;
+            color: #fff;
+            background-color: black;
+            padding: 7px;
+            margin: 3px;
+            font-size: 20px;
+            border-radius: 100%;
+        }
+        
+        .slide a i:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        /* Footerbar Start  */
+        
+        .footer {
+            background-color: #12192f;
+            /* Footer background */
+            color: #fff;
+            /* Footer text color */
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .footer-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .footer-menu li {
+            display: inline;
+        }
+        
+        .footer-menu li a {
+            color: #ffffff;
+            /* Light green color */
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .footer-menu li a:hover {
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            margin: 2px 0;
+        }
+        
+        .social-icons a {
+            color: #9edb85;
+            /* Icon color */
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #fff;
+            /* Change icon color on hover */
+        }
+        
+        .footer-copyright {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        
+        .footer-copyright a {
+            color: #00ffde;
+            text-decoration: none;
+        }
+        /* Footerbar End */
+    </style>
+    <section>
+        <div class="top-Navbar">
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="./">
+                        <img src="./image/Final Header Logo.png" alt="header-logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./index.html>Home</a>
+                            </li>
+                            <li class=" nav-item ">
+                                <a class="nav-link " href="blog.html ">Blog</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="./about-us.html ">About Us</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="contact-us.html ">Contact Us</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link btn-signup " href="sign-up.html ">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        </section>
+  <section class=" myslider-section ">
+    <div class=" myslider-container ">
+      <h1>About Us</h1>
+      <div class=" myslider ">
+        <div class=" myslider-track ">
+          <div class=" slide ">
+            <img src="image/abu_naiem.jpeg " alt=" Abu Naiem ">
+            <p>Abu Naiem</p>
+            <a href=" # ">
+              <i class=" fa-brands fa-facebook "></i>
+              <i class=" fa-brands fa-x-twitter "></i>
+              <i class=" fa-brands fa-square-instagram "></i>
+            </a>
+          </div>
+          <div class=" slide ">
+            <img src="image/gollam_rabbi.jpg " alt=" Gollam Rabbi ">
+            <p>Gollam Rabbi</p>
+            <a href=" # ">
+              <i class=" fa-brands fa-facebook "></i>
+              <i class=" fa-brands fa-x-twitter "></i>
+              <i class=" fa-brands fa-square-instagram "></i>
+            </a>
+          </div>
+          <div class=" slide ">
+            <img src="image/ashraful.jpg " alt=" Md. Ashraful Alom ">
+            <p>Md. Ashraful Alom</p>
+            <a href=" # ">
+              <i class=" fa-brands fa-facebook "></i>
+              <i class=" fa-brands fa-x-twitter "></i>
+              <i class=" fa-brands fa-square-instagram "></i>
+            </a>
+          </div>
+          <div class=" slide ">
+            <img src="image/zahidul.jpeg " alt=" Shiplu ">
+            <p>Zahidul Islam</p>
+            <a href=" # ">
+              <i class=" fa-brands fa-facebook "></i>
+              <i class=" fa-brands fa-x-twitter "></i>
+              <i class=" fa-brands fa-square-instagram "></i>
+            </a>
+          </div>
+          <div class=" slide ">
+            <img src="image/shiplu.jpg " alt=" Shiplu ">
+            <p>Shiplu</p>
+            <a href=" # ">
+              <i class=" fa-brands fa-facebook "></i>
+              <i class=" fa-brands fa-x-twitter "></i>
+              <i class=" fa-brands fa-square-instagram "></i>
+            </a>
+          </div>
+          <div class=" slide ">
+            <img src="image/sara.jpg " alt=" Sara ">
+            <p>Shikh Sara</p>
+            <a href=" # ">
+              <i class=" fa-brands fa-facebook "></i>
+              <i class=" fa-brands fa-x-twitter "></i>
+              <i class=" fa-brands fa-square-instagram "></i>
+            </p></a>
+          </div>
+          <div class=" slide ">
+            <img src="image/amani.jpg " alt=" Shikh Samira ">
+            <p>Shikh Samira</p>
+            <a href=" # ">
+              <i class=" fa-brands fa-facebook "></i>
+              <i class=" fa-brands fa-x-twitter "></i>
+              <i class=" fa-brands fa-square-instagram "></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---------------------------------Footer Bar Start --------------------------------->
+  <section>
+    <footer class=" footer ">
+        <div class=" footer-content ">
+            <a class=" navbar-brand " href=" index.html ">
+                <img src="./image/Final Header Logo.png " alt=" footer-logo ">
+            </a>
+            <ul class=" footer-menu ">
+                <li><a href=" # ">Home</a></li>
+                <li><a href=" # ">Blog</a></li>
+                <li><a href=" # ">About Us</a></li>
+                <li><a href=" # ">Contact Us</a></li>
+
+            </ul>
+            <div class=" social-icons ">
+                <a href=" # "><i class=" fab fa-twitter "></i></a>
+                <a href=" # "><i class=" fab fa-facebook-f "></i></a>
+                <a href=" # "><i class=" fab fa-instagram "></i></a>
+                <a href=" # "><i class=" fab fa-tiktok "></i></a>
+            </div>
+            <p class=" footer-copyright ">
+                Copyright ©2024. All rights reserved by <a href=" codebengal.com ">codeBengaL</a>
+            </p>
+        </div>
+    </footer>
+</section>
+<!---------------------------------Footer Bar End --------------------------------->
+
+  <script src=" https://kit.fontawesome.com/12a44076c0.js " crossorigin=" anonymous "></script>
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "></script>
+  <script >
+    const myslider = document.querySelector('.myslider ');
+
+    let isDragging = false;
+    let startX, scrollLeft;
+
+    // Handle mouse down event to start dragging
+    myslider.addEventListener('mousedown ', (e) => {
+      isDragging = true;
+      myslider.classList.add('dragging ');
+      startX = e.pageX - myslider.offsetLeft;
+      scrollLeft = myslider.scrollLeft;
+      myslider.style.cursor = 'grabbing '; // Change cursor to grabbing when dragging
+    });
+
+    // Handle mouse leave event to stop dragging if mouse leaves the area
+    myslider.addEventListener('mouseleave ', () => {
+      isDragging = false;
+      myslider.classList.remove('dragging ');
+      myslider.style.cursor = 'grab '; // Change cursor back to grab when not dragging
+    });
+
+    // Handle mouse up event to stop dragging
+    myslider.addEventListener('mouseup ', () => {
+      isDragging = false;
+      myslider.classList.remove('dragging ');
+      myslider.style.cursor = 'grab '; // Change cursor back to grab when not dragging
+    });
+
+    // Handle mouse move event while dragging
+    myslider.addEventListener('mousemove ', (e) => {
+      if (!isDragging) return;
+      e.preventDefault(); // Prevent default behavior
+
+      const x = e.pageX - myslider.offsetLeft;
+      const walk = (x - startX) * 1.5; // Adjust multiplier for smoother or faster scrolling
+
+      myslider.scrollLeft = scrollLeft - walk; // Move the myslider left/right
+    });
+
+  </script>
+
+
+<!-- --------------------------------------- -->
+  
+</body>
+</html>
