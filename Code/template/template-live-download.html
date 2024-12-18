@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Blog</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../image/Round Logo.png" type=" image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0f172a !important;
+            color: #fff;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+        :root {
+            --primery-color: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Nevbar  Start */
+
+        .top-Navbar {
+            background-color: #0f172a;
+            width: 100%;
+            /* height: 71px; */
+            box-shadow: 1px 7px 4px 0px #18326f3b;
+            position: fixed;
+            z-index: 2;
+        }
+
+        .navbar {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-weight: 500;
+        }
+
+        .navbar-brand img {
+            width: 195px;
+            /* height: 66px; */
+        }
+
+        .navbar-brand {
+            padding: 0px;
+        }
+
+        .nav-item .nav-link {
+            color: #ffffff;
+            margin-right: 13px;
+            display: inline-block;
+        }
+
+        .nav-item .nav-link.active {
+            color: #aca2ff !important;
+        }
+
+        .nav-item .nav-link:hover {
+            color: #a3a3a3;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        /* Sign Up Button */
+
+        .nav-item .btn-signup {
+            background-color: #2563eb;
+            color: #ffffff !important;
+            padding: 7px 15px;
+            border-radius: 19px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .nav-item .btn-signup:hover {
+            background-color: #1d4ed8;
+            color: #ffffff;
+        }
+
+        /* Nevbar End */
+
+        /* footer start */
+        .footer {
+            background-color: #12192f;
+            /* Footer background */
+            color: #fff;
+            /* Footer text color */
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 66px;
+        }
+
+        .footer-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-menu li {
+            display: inline;
+        }
+
+        .footer-menu li a {
+            color: #ffffff;
+            /* Light green color */
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .footer-menu li a:hover {
+            text-decoration: none;
+        }
+
+        .social-icons {
+            margin: 2px 0;
+        }
+
+        .social-icons a {
+            color: #9edb85;
+            /* Icon color */
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+            /* Change icon color on hover */
+        }
+
+        .footer-copyright {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .footer-copyright a {
+            color: #00ffde;
+            text-decoration: none;
+        }
+
+        /* Footerbar End */
+
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .blog_container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        .blog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .blog-card {
+            background-color: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 8px 13px 0 black;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card .content {
+            padding: 20px;
+        }
+
+        .blog-card .content h3 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .blog-card .content p {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin: 10px 0 0;
+        }
+
+        .blog-card .content a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        .content_list {
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto 30px;
+            gap: 10px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .content_list a {
+            background-color: #23345c;
+            color: #fff;
+            text-align: center;
+            min-width: 90px;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 7px 10px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .content_list a:hover {
+            color: #7590cf65;
+            transform: translateY(-5px);
+        }
+
+        .content_list a.active {
+            background-color: #60a5fa;
+            /* Highlight color */
+            color: #000;
+            /* Text color */
+            transform: translateY(-3px);
+            /* Slight lift */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow */
+            transition: all 0.3s ease;
+            /* Smooth animation */
+        }
+
+        .heading {
+            display: flex;
+            max-width: 400px;
+            margin: auto;
+            justify-content: center;
+            font-size: 50px;
+            color: #ffffff;
+            padding-bottom: 30px;
+            font-weight: 600;
+        }
+
+        /* update   strat*/
+
+        .cat_date {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cat_date p {
+            color: #c3c3c3 !important;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+
+        .background-head {
+            width: 100%;
+            max-height: 120px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .background-content {
+            width: 80%;
+            border-radius: 20px;
+            color: white;
+            margin-top: -40px;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-box-shadow: 0px -16px 37px 0px rgba(100, 100, 212, 1);
+            -moz-box-shadow: 0px -16px 37px 0px rgba(100, 100, 212, 1);
+            box-shadow: 0px -16px 37px 0px rgba(100, 100, 212, 1);
+        }
+
+        button.navbar-toggler {
+            background-color: #324a83;
+        }
+
+        .background-head h2 {
+            padding: 50px 0 !important;
+            font-size: 42px;
+            color: white;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .background-content p {
+            font-size: 16px;
+            padding: 10px 29px;
+        }
+
+        .background-content .img2 {
+            padding: 33px 50px 23px 0px;
+            border-radius: 38px;
+        }
+
+
+
+
+        .background-head {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .background-content {
+            width: 100%;
+            color: white;
+            margin-top: 78px;
+            background-color: #0F172A;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-box-shadow: 0px -16px 37px 0px rgba(100, 100, 212, 1);
+            -moz-box-shadow: 0px -16px 37px 0px rgba(100, 100, 212, 1);
+            box-shadow: 1px 3px 37px 0px rgba(100, 100, 212, 1);
+        }
+
+        .background-head h2 {
+            font-size: 42px;
+            margin-top: 30px;
+            color: white;
+            margin-top: 131px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .background-content p {
+            font-size: 20px;
+            padding: 10px 29px;
+        }
+
+        .background-content .img2 {
+            padding: 33px 0px 23px 0px;
+            border-radius: 38px;
+        }
+
+
+        /* Extra button  */
+        /* From Uiverse.io by vinodjangid07 */
+        .Btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background-color: #1c2a4d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition-duration: .3s;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
+        }
+
+
+
+        .Btn:hover {
+            background-color: rgb(38, 46, 117);
+            transition-duration: .3s;
+        }
+
+
+
+        @keyframes slide-in-top {
+            0% {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        /* From Uiverse.io by barisdogansutcu */
+        .li_btn {
+            display: flex;
+            justify-content: center;
+            color: #000;
+            text-decoration: none;
+            padding: 10px 23px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 0;
+            background-color: white;
+            box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all 0.5s ease;
+        }
+
+        .li_btn:hover {
+            letter-spacing: 3px;
+            background-color: hsl(0, 80%, 48%);
+            color: hsl(0, 0%, 100%);
+            box-shadow: rgb(220, 24, 24) 0px 7px 29px 0px;
+        }
+
+        .li_btn:active {
+            letter-spacing: 3px;
+            background-color: hsl(0, 100%, 52%);
+            color: hsl(0, 0%, 100%);
+            box-shadow: rgb(243, 3, 3) 0px 0px 0px 0px;
+            transform: translateY(10px);
+            transition: 100ms;
+        }
+
+        .exta-Icon {
+            display: flex;
+            gap: 10px;
+            /* max-width: 200px; */
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a i {
+            font-size: 22px;
+            color: #16337e;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a i:hover {
+            transform: scale(1.2);
+            color: #0000ff;
+        }
+
+        /* ................................Responsive Mode Css................................... */
+        /* Small devices (0-570px)  Mobile Device*/
+
+        @media (max-width: 570px) {
+            .navbar-brand img {
+                width: 195px;
+                /* height: 66px; */
+            }
+
+            .background-head h2 {
+                font-size: 25px !important;
+                margin-top: 75px !important;
+
+            }
+
+            .li_btn {
+                padding: 10px 23px !important;
+                font-size: 12px !important;
+            }
+
+            .background-content {
+                margin-top: 44px !important;
+            }
+
+            .background-content p {
+                padding: 0px !important;
+            }
+
+            .background-content .img2 {
+                padding: 33px 1px 23px 1px !important;
+                border-radius: 0px !important;
+            }
+
+            .background-content p {
+                margin-top: 20px !important;
+                font-size: 17px !important;
+                padding: 0px !important;
+            }
+
+            .background-content .img1 {
+                padding: 0px;
+            }
+        }
+
+
+        /* Medium devices (570px - 768px) Teb Device*/
+
+        @media (min-width: 570px) and (max-width: 768px) {
+            .background-head h2 {
+
+                font-size: 32px !important;
+
+                margin-top: 98px !important;
+
+            }
+
+            .background-content {
+                margin-top: 44px !important;
+            }
+
+            .background-content p {
+                padding: 0px !important;
+            }
+
+            .background-content .img2 {
+                padding: 33px 1px 23px 1px !important;
+                border-radius: 0px !important;
+            }
+
+            .background-content p {
+                font-size: 20px;
+                padding: 0px;
+            }
+
+            .background-content .img1 {
+                padding: 20px;
+            }
+        }
+
+
+        /* Large devices (768px - 992px)  Laptop Device*/
+
+        @media (min-width: 768px) and (max-width: 992px) {
+            .background-head h2 {
+
+                font-size: 32px !important;
+
+                margin-top: 75px !important;
+            }
+
+            .background-content {
+                margin-top: 44px !important;
+            }
+
+            .background-content p {
+                padding: 0px !important;
+            }
+
+            .background-content .img2 {
+                padding: 33px 1px 23px 1px !important;
+                border-radius: 0px !important;
+            }
+
+            .background-content p {
+                font-size: 20px;
+                padding: 0px;
+            }
+
+            .background-content .img1 {
+                padding: 20px;
+            }
+        }
+
+
+        /* Extra large devices (992px and above)  Computer Device*/
+
+        @media (min-width: 992px) {}
+
+        /* ................................Responsive Mode Css End................................... */
+    </style>
+</head>
+
+<body>
+    <!-- navbar start  -->
+    <section>
+        <div class="top-Navbar">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="../image/Final Header Logo.png" alt="header-logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="../blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../about-us.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../contact_us.html">Contact Us</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link btn-signup" href="../admin/sign.html">Sign Up</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section>
+        <!---------------------------------------- navbar end  ---------------------------------->
+        <section>
+            <section class="container p-1">
+
+                <div class="background-head">
+                    <h2 class="py-5 text-center">HTML Templates: Reusable Snippets of Code</h2S>
+                </div>
+                <div class="background-content p-5">
+                    <img class="img1 w-100" src="../image/blog-image.png" alt="">
+
+                    <p>In web development, clean, efficient, and manageable code relies on reusability. The HTML
+                        template element is one tool that promotes reusability by letting web developers define reusable
+                        HTML pieces that can be incorporated quickly into the web
+                        page and adjusted immediately. This article will introduce HTML templates, explain their syntax
+                        and structure, provide practical examples, discuss common use cases, and outline best practices
+                        and limitations. Reusability is a key factor in
+                        efficient web development. It allows the developers to create the components or snippets of
+                        codes only once and reapply them in different parts of a program. This practice has some key
+                        benefits: Efficiency: Writing reusable code decreases
+                        the redundant workload, enabling developers to concentrate more on adding new features and
+                        improvements with their extra time. Consistency: If you keep using the same code, it will help
+                        standardize the application. That is essential for a
+                        consistent experience for end-users across an application. Maintenance: You can apply updates
+                        (or fixes) at one spot, which will immediately spread to all cases, making it easier for
+                        maintenance while reducing the possibility of mistakes.
+                        Scalability: The scaling of reusable components across various sections of the application is
+                        quite easy, thereby enhancing the growth and expansion of the project. What are HTML Templates?
+                        The HTML component is a unique entity used to store
+                        client-side elements that are not supposed to be displayed during the initial load of the site.
+                        Instead, contents in the are saved in the document fragment until they are called upon with
+                        JavaScript explicitly. It does not render, execute
+                        scripts, or even influence how documents are laid out. Hence, it allows developers to specify
+                        HTML pieces that can be dynamically inserted into the document. Advantages of Using HTML
+                        Templates Using HTML templates offers several important
+                        merits that improve the effectiveness as well as efficiency of web development initiatives. The
+                        following are some of the main advantages: Reusability: HTML templates help you create reusable
+                        elements. A single template can be used many times
+                        throughout a web app, eliminating the need for repeating code and making it more efficient and
+                        maintainable.
+
+                        <img class="w-100 img2" src="../image/blog-image.png" alt=""> Deferred Rendering: A usually
+                        consists of content that only gets to be visible once it is instantiated; this can lead to
+                        faster initial loading times for a page. Encapsulation: Templates
+                        wrap HTML frameworks and isolate them from the regular movement of documents until when
+                        necessary. This makes organizing and managing codes easier. Dynamic Content Generation:
+                        Templates allow developers to generate content dynamically without
+                        duplicating code and easily respond to user interactions or data changes. The clean and
+                        efficient approach of managing reusable HTML snippets through the use of the element provides a
+                        solution for web developers. Practical Examples A web page
+                        can utilize HTML templates by defining a template, accessing it through JavaScript, cloning its
+                        content, and then appending this cloned content to the DOM. The function of reusable templates
+                        in HTML is powerful for web developers, as they
+                        define components only once but use them several times in a web application. This not only helps
+                        to ensure uniformity in the look and feel of the design but also makes it easier to keep track
+                        of code changes while minimizing redundancy. Given
+                        two real-world cases, we’ll explore how to create and manage a reusable card component and blog
+                        post template. Reusable Card Component Cards are often used in web design to present information
+                        attractively. By creating HTML templates that
+                        are reusable for card components, many cards with different content can be generated while
+                        maintaining a consistent layout and design. This example will walk you through creating a
+                        reusable profile card component using HTML templates and JavaScript.
+                        First, you need to define the HTML template for the profile card.
+                    </p>
+
+
+                    <section class="exta-Icon">
+                        <a href="#" class="li_btn">Live</a>
+                        <a href="#" class="li_btn">Download⬇️</a>
+
+                    </section>
+                </div>
+            </section>
+
+
+
+
+            <!---------------------------------Footer Bar Start --------------------------------->
+            <section>
+                <footer class=" footer ">
+                    <div class=" footer-content ">
+                        <a class=" navbar-brand " href="../index.html ">
+                            <img src="../image/Final Header Logo.png" alt=" footer-logo ">
+                        </a>
+                        <ul class=" footer-menu ">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../about-us.html">About Us</a></li>
+                            <li><a href="../contact_us.html">Contact Us</a></li>
+
+                        </ul>
+                        <div class=" social-icons">
+                            <a href="https://www.instagram.com/codebengal/"><i class="fa-brands fa-instagram "
+                                    style="color: #16337e; "></i></a>
+                            <a href="https://www.tiktok.com/@codebengal"><i class="fa-brands fa-tiktok "
+                                    style="color: #16337e; "></i></a>
+                            <a href="https://x.com/CodeBengal5"><i class="fa-brands fa-x-twitter "
+                                    style="color: #16337e; "></i></a>
+                            <a href="https://discord.gg/wUyYEtCJ "><i class="fa-brands fa-discord "
+                                    style="color: #16337e; "></i></a>
+                            <a href="https://www.youtube.com/@codebengall"><i class="fa-brands fa-youtube "
+                                    style="color: #16337e; "></i></a>
+                            <a href="https://t.me/codebengal"><i class="fa-brands fa-telegram "
+                                    style="color: #16337e; "></i></a>
+                        </div>
+                        <p class=" footer-copyright ">
+                            Copyright ©2024. All rights reserved by <a href="../index.html">codeBengaL</a>
+                        </p>
+                    </div>
+                </footer>
+            </section>
+
+
+</body>
+<script src="https://kit.fontawesome.com/12a44076c0.js" crossorigin="anonymous"></script>
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    const filterLinks = document.querySelectorAll('.content_list a');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+
+    filterLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default link behavior
+
+            const type = this.getAttribute('data-type');
+
+
+            filterLinks.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+
+
+            blogCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (type === 'all' || category === type) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // By default, show all blogs and set the "All" link as active
+    document.querySelector('.content_list a[data-type="all"]').classList.add('active');
+    blogCards.forEach(card => {
+        card.style.display = 'block'; // Display all blog cards by default
+    });
+
+</script>
+
+
+</html>
